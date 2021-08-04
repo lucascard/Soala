@@ -9,11 +9,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "cypress": "^8.1.0"
+  "devDependencies": {},
+  "dependencies": {
+    "cypress": "^8.0.0",
+    "cypress-cucumber-preprocessor": "^4.1.4"
   },
   "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": true 
+    "nonGlobalStepDefinitions": true
   }
-  
 }
