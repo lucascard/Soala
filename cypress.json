@@ -1,3 +1,9 @@
 { "testFiles": "**/*.feature",
-    "baseUrl": "https://tcti.sicae.sisicmbio.icmbio.gov.br/"
+    "baseUrl": "https://tcti.sicae.sisicmbio.icmbio.gov.br/",
+    "pageLoadTimeout":80000,
+    "defaultCommandTimeout":10000,
+    "execTimeout":80000,
+    "taskTimeout": 80000,
+    "requestTimeout":20000,
+    "responseTimeout":40000
 }
