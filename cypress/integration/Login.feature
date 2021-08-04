@@ -8,7 +8,7 @@ Scenario: Tela de login com CPF
     And Aperte o botão de Login
     Then Eu entro no sistema
 
-    Entrando no SOALA
+Scenario: Entrando no SOALA
     Given Eu clique no botão de acessar para entrar no Soala
     Then Aparece uma modal para escolher a unidade e o perfil
     When Eu escolho a unidade e o perfil
