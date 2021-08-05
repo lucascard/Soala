@@ -2,7 +2,7 @@
 Funcionalidade: Soala
 
     Como usuário, desejo entrar na página do SOALA
-
+    
 Cenario: Tela de login com CPF
     Dado Que eu acesse o site do ICMBIO
     E Que eu preencha os campos de usuário e senha
@@ -36,4 +36,3 @@ Cenario: Tela de login com CPF
     Quando Eu clicar em enviar
     Entao O documento é assinado
     E Aparece uma mensagem de confirmação.
-
