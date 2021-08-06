@@ -1,16 +1,10 @@
 #language: pt
-Funcionalidade: Soala
+Funcionalidade: Coordenador/Gerente
 
-    Como usuário, desejo entrar na página do SOALA
+    Como Coordenador, desejo entrar na página do SOALA
     
-Cenario: Tela de login com CPF
-    Dado Que eu acesse o site do ICMBIO
-    E Que eu preencha os campos de usuário e senha
-    Quando Aperte o botão de Login
-    Entao Eu entro no sistema
-
-    Dado Que eu clique no botão de acessar para entrar no Soala
-    Quando Eu escolho a unidade e o perfil
+Cenario: Fluxo de coordenador/Gerente
+    Dado Que o usuário acesse o sistema com o perfil "Coordenador/Gerente"
     Entao Eu entro na página MEUS PROCESSOS
 
     Dado Que eu clique em pesquisar e digite MANIFESTAÇÃO DE PARECERISTA
