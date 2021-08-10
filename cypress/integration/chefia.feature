@@ -11,3 +11,9 @@ Contexto:
     Dado Que o usuário selecione a opção "Designar Analista"
     E Designe o analista "Aline Carla"
     Entao O Processo deve ser designado
+
+    Cenario: Analisar Nota Tecnica
+    Dado Que o usuário selecione a opção "Gerar nota técnica"
+    E O usuário solicitar assinar e enviar
+    Quando O usuário enviar os dados ao SEI
+    Entao A nota técnica deve ser salva
