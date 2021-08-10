@@ -2,8 +2,10 @@
 Funcionalidade: Coordenador/Gerente
 
     Como Coordenador, desejo entrar na página do SOALA
+    Contexto:
+    Quando que um novo processo seja criado
     
-Cenario: Fluxo de coordenador/Gerente
+    Cenario: Fluxo de coordenador/Gerente
     Dado Que o usuário acesse o sistema com o perfil "Coordenador/Gerente"
     Entao Eu entro na página MEUS PROCESSOS
 

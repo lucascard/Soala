@@ -23,6 +23,9 @@ When(/^que um novo processo seja criado$/, () => {
     Cypress.LocalStorage.clear = function (keys, ls, rs) {
     }
 
+    //Caso tenha um token valido coloque na proxima linha
+    // localStorage.setItem('tokenApi', 'DIGITE O TOKEN AQUI E DESCOMENTE A LINHA')
+
     cy.request({    //Envia Processo Vazio Para API
         method: 'POST',
         failOnStatusCode: false,
@@ -32,7 +35,7 @@ When(/^que um novo processo seja criado$/, () => {
             'token': localStorage.tokenApi,
         }
     }).then(res => {
-        if (res.body.message == 'Chave inválida.'){  //Token Salvo é Invalido
+        if (res.body.message === 'Chave inv&aacute;lida.'){  //Token Salvo é Invalido
             cy.request({ //Gera Novo Token
                 method: 'POST',
                 failOnStatusCode: false,
@@ -46,7 +49,7 @@ When(/^que um novo processo seja criado$/, () => {
             })
         }
     })
-
+    console.log(localStorage)
     cy.request({
         method: 'POST',
         failOnStatusCode: false,
