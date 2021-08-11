@@ -1,15 +1,5 @@
 /// <reference types="cypress" />
 
-Given(/^Que exista um processo na etapa "([^"]*)"$/, (etapa) => {
-    cy.get('input[type="search"]').type(etapa)
-    cy.wait(4000)
-	cy.get('td').contains(new RegExp('^' + etapa + '$', 'g'))
-});
-
-When(/^Que o usuário selecione a opção "([^"]*)"$/, opcao => {
-	cy.get('[title=\"'+opcao+'\"]').first().click()
-});
-
 When(/^Designe o analista "([^"]*)"$/, (analista) => {
 	cy.contains("Selecione uma opção...").click()
     cy.get('input[placeholder="Pesquisar..."').type(analista)
