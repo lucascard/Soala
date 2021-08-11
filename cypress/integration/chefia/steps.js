@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-When(/^Designe o analista "([^"]*)"$/, (analista) => {
+When(/^Designar o analista "([^"]*)"$/, (analista) => {
 	cy.contains("Selecione uma opção...").click()
     cy.get('input[placeholder="Pesquisar..."').type(analista)
     cy.get('span[class="text"]').contains(analista).click()
@@ -48,4 +48,16 @@ When(/^O usuário solicite salvar$/, () => {
 
 Then(/^Os dados da GRU devem ser salvos$/, () => {
 	cy.wait('@salvarGRU').its('response.body').should('include', 'Os dados foram salvos com sucesso.')
+});
+
+
+When(/^O usuário solicitar assinar o documento$/, () => {
+    cy.wait(300)
+	cy.intercept('POST', 'https://tctisoala.sisicmbio.icmbio.gov.br/designacao/chefia/saveDespacho')
+    .as('salvarDespacho')
+	cy.contains('Assinar Documento').click()
+});
+
+Then(/^O despacho deve ser salvo$/, () => {
+	cy.wait('@salvarDespacho').its('response.body').should('include', 'Despacho Interlocut\\u00f3rio cadastrado com sucesso.')
 });

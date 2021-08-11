@@ -9,14 +9,14 @@ Contexto:
     Cenario: Designar Analista
     Dado Que exista um processo na etapa "Análise de conformidade"
     E Que o usuário selecione a opção "Designar Analista"
-    E Designe o analista "Aline Carla"
+    E Designar o analista "Aline Carla"
     Entao O Processo deve ser designado
 
     Cenario: Analisar Nota Tecnica
     Dado Que exista um processo na etapa "Análise de conformidade"
     E Que o usuário selecione a opção "Gerar nota técnica"
-    E O usuário solicitar assinar e enviar
-    Quando O usuário enviar os dados ao SEI
+    Quando O usuário solicitar assinar e enviar
+    E O usuário enviar os dados ao SEI
     Entao A nota técnica deve ser salva
 
     Cenario: Solicitar Cobrança de GRU
@@ -26,3 +26,10 @@ Contexto:
     E O usuário anexe o documento na GRU
     E O usuário solicite salvar
     Então Os dados da GRU devem ser salvos
+
+    Cenario: Gerar Despacho
+    Dado Que exista um processo na etapa "Pagamento não realizado"
+    E Que o usuário selecione a opção "Gerar Despacho"
+    Quando O usuário solicitar assinar o documento
+    E O usuário enviar os dados ao SEI
+    Então O despacho deve ser salvo
