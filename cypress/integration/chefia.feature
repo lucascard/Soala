@@ -1,7 +1,7 @@
 #language: pt
 Funcionalidade: Fluxo da Chefia
 
-Eu como parte da chefia, desejo analisar nota tecnica ou designar um analista
+Eu como parte da chefia, desejo analisar nota tecnica, designar um analista ou solicitar cobrança GRU.
 
 Contexto:
     Dado Que o usuário acesse o sistema com o perfil "Chefia ICMBio/Responsável Designado"

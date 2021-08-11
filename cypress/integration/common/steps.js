@@ -11,6 +11,23 @@ Given(/^Que o usuário acesse o sistema com o perfil "([^"]*)"$/, (perfil) => {
     cy.get('#btn-access').click()
 });
 
+When(/^O usuário enviar os dados ao SEI$/, () => {
+	cy.get('input[name="userLogin"]').type('12345')
+    cy.get('input[name="userSenha"]').type('12345')
+    cy.get('select[name="userCargo"]').select('Assessor(a)')
+    cy.contains('Enviar').click()
+});
+
+Given(/^Que exista um processo na etapa "([^"]*)"$/, (etapa) => {
+    cy.get('input[type="search"]').type(etapa)
+    cy.wait(4000)
+	cy.get('td').contains(new RegExp('^' + etapa + '$', 'g'))
+});
+
+When(/^Que o usuário selecione a opção "([^"]*)"$/, opcao => {
+	cy.get('[title=\"'+opcao+'\"]').first().click()
+});
+
 When(/^que um novo processo seja criado$/, () => {
     var dataAtual = new Date(),
     diaAtual = dataAtual.getDate().toString().padStart(2, '0'),
@@ -129,11 +146,4 @@ When(/^que um novo processo seja criado$/, () => {
             }],
         },
     }).then(response => expect(response.body.message).to.eq('Dados enviados com sucesso.'))
-});
-
-When(/^O usuário enviar os dados ao SEI$/, () => {
-	cy.get('input[name="userLogin"]').type('12345')
-    cy.get('input[name="userSenha"]').type('12345')
-    cy.get('select[name="userCargo"]').select('Assessor(a)')
-    cy.contains('Enviar').click()
 });
