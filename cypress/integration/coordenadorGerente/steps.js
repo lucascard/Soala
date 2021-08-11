@@ -96,6 +96,9 @@ Then(/^Aparece uma mensagem de confirmação.$/, () => {
 	cy.contains('Despacho Interlocutório cadastrado com sucesso.').should('be.visible')
 });
 
-
-
-
+When(/^O usuário solicitar assinar o documento$/, () => {
+    cy.wait(300)
+	cy.intercept('POST', 'https://tctisoala.sisicmbio.icmbio.gov.br/designacao/coordenador/saveDespacho')
+    .as('salvarDespacho')
+	cy.contains('Assinar Documento').click()
+});
