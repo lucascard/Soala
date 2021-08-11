@@ -15,7 +15,7 @@ Contexto:
     Cenario: Analisar Nota Tecnica
     Dado Que exista um processo na etapa "Análise de conformidade"
     E Que o usuário selecione a opção "Gerar nota técnica"
-    Quando O usuário solicitar assinar e enviar
+    Quando O usuário solicitar assinar e enviar nota técnica
     E O usuário enviar os dados ao SEI
     Entao A nota técnica deve ser salva
 

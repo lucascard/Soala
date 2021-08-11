@@ -15,17 +15,6 @@ Then(/^O Processo deve ser designado$/, () => {
     cy.wait('@saveAnalistas').its('response.body').should('include', 'Analista designado com sucesso.')
 });
 
-When(/^O usuário solicitar assinar e enviar$/, () => {
-    cy.intercept('POST', 'https://tctisoala.sisicmbio.icmbio.gov.br/designacao/gerarNotaTecnicaSei')
-    .as('gerarNotaTecnicaSei')
-    cy.wait(500)
-	cy.contains('Assinar e enviar').click()
-});
-
-Then(/^A nota técnica deve ser salva$/, () => {
-	cy.wait('@gerarNotaTecnicaSei').its('response.body').should('include', 'Nota t\\u00e9cnica salva com sucesso.')
-});
-
 When(/^O usuário marcar "([^"]*)" para a emissão de GRU$/, (opt) => {
     cy.wait(1500)
     cy.contains(opt).siblings('input').click()
@@ -49,7 +38,6 @@ When(/^O usuário solicite salvar$/, () => {
 Then(/^Os dados da GRU devem ser salvos$/, () => {
 	cy.wait('@salvarGRU').its('response.body').should('include', 'Os dados foram salvos com sucesso.')
 });
-
 
 When(/^O usuário solicitar assinar o documento$/, () => {
     cy.wait(300)

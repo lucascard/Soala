@@ -147,3 +147,18 @@ When(/^que um novo processo seja criado$/, () => {
         },
     }).then(response => expect(response.body.message).to.eq('Dados enviados com sucesso.'))
 });
+
+When(/^O usuário solicitar assinar e enviar nota técnica$/, () => {
+    cy.intercept('POST', 'https://tctisoala.sisicmbio.icmbio.gov.br/designacao/gerarNotaTecnicaSei')
+    .as('gerarNotaTecnicaSei')
+    cy.wait(500)
+	cy.contains('Assinar e enviar').click()
+});
+
+Then(/^O despacho deve ser salvo$/, () => {
+	cy.wait('@salvarDespacho').its('response.body').should('include', 'Despacho Interlocut\\u00f3rio cadastrado com sucesso.')
+});
+
+Then(/^A nota técnica deve ser salva$/, () => {
+	cy.wait('@gerarNotaTecnicaSei').its('response.body').should('include', 'Nota t\\u00e9cnica salva com sucesso.')
+});
