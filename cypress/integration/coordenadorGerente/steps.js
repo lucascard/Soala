@@ -95,7 +95,3 @@ Then(/^O documento é assinado$/, () => {
 Then(/^Aparece uma mensagem de confirmação.$/, () => {
 	cy.contains('Despacho Interlocutório cadastrado com sucesso.').should('be.visible')
 });
-
-
-
-
