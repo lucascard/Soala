@@ -45,7 +45,3 @@ When(/^O usuário solicitar assinar o documento$/, () => {
     .as('salvarDespacho')
 	cy.contains('Assinar Documento').click()
 });
-
-Then(/^O despacho deve ser salvo$/, () => {
-	cy.wait('@salvarDespacho').its('response.body').should('include', 'Despacho Interlocut\\u00f3rio cadastrado com sucesso.')
-});

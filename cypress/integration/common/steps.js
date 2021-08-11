@@ -155,10 +155,10 @@ When(/^O usuário solicitar assinar e enviar nota técnica$/, () => {
 	cy.contains('Assinar e enviar').click()
 });
 
-Then(/^O despacho deve ser salvo$/, () => {
-	cy.wait('@salvarDespacho').its('response.body').should('include', 'Despacho Interlocut\\u00f3rio cadastrado com sucesso.')
-});
-
 Then(/^A nota técnica deve ser salva$/, () => {
 	cy.wait('@gerarNotaTecnicaSei').its('response.body').should('include', 'Nota t\\u00e9cnica salva com sucesso.')
+});
+
+Then(/^O despacho deve ser salvo$/, () => {
+	cy.wait('@salvarDespacho').its('response.body').should('include', 'Despacho Interlocut\\u00f3rio cadastrado com sucesso.')
 });
