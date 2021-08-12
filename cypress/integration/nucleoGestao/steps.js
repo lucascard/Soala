@@ -81,3 +81,7 @@ Then(/^Os dados de pagamento devem ser atualizados$/, () => {
 Then(/^Os dados de conclusão devem ser atualizados$/, () => {
 	cy.wait('@conclusaoProcesso').its('response.body').should('include', 'Registro de conclus\\u00e3o de processo cadastrado com sucesso.')
 });
+
+Then(/^a opção "([^"]*)" deve estar habilitada$/, (opcao) => {
+	cy.get('[title=\"'+opcao+'\"]').should('be.visible')
+});
