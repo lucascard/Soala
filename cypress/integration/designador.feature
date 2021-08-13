@@ -1,20 +1,17 @@
 #language: pt
 Funcionalidade: Designador
 
-    Como Designador, quero designar os processos
+    Como Designador, quero designar os processos.
 
-Cenario: Fluxo Designador
-
+    Contexto:
     Dado Que o usuário acesse o sistema com o perfil "Designador"
-    Entao Eu entro na página MEUS PROCESSOS
 
-    Dado Que eu Designe a equipe de um processo
-    Entao Eu entro na página DESIGNAR PARECERISTAS
-
-    Dado Que eu Designe o Parecerista
-    Quando Gerar o despacho da equipe designada
-    Entao Eu assino o documento
-
-    Dado Que eu preencha os Dados do SEI
-    Quando Eu enviar todos os dados
-    Entao O documento o processo termina
+Cenario: Designar parecerista
+    Dado Que exista um processo na etapa "Designar equipe"
+    E Que o usuário selecione a opção "Designar equipe"
+    Quando O usuário informar o parecerista "Aline Carla GonÇalves"
+    E Que o usuário selecione a opção "Gerar Despacho"
+    E Que o usuário confirme que deseja continuar
+    E O usuário solicitar assinar o despacho de designação
+    E O usuário enviar os dados ao SEI
+    Então O despacho deve ser salvo

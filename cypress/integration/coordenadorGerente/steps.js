@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-
 When(/^O usuário informar os dados:$/, (tabelaDados) => {
 	const DADOS = tabelaDados.hashes()[0]
 	cy.wait(500)
@@ -25,18 +24,6 @@ When(/^O usuário informar os dados:$/, (tabelaDados) => {
 	cy.contains('span[class="text"]', DADOS.Responsavel).click()
 	cy.get('.card-header').click()
 	cy.contains('Salvar').click()
-});
-
-When(/^Que o usuário confirme que deseja continuar$/, () => {
-	cy.wait(1000)
-	cy.contains('button', 'Sim').click()
-}); 
-
-When(/^O usuário solicitar assinar o despacho de designação$/, () => {
-    cy.wait(300)
-	cy.intercept('POST', 'https://tctisoala.sisicmbio.icmbio.gov.br/designacao/saveDespacho')
-    .as('salvarDespacho')
-	cy.contains('Assinar Documento').click()
 });
 
 When(/^O usuário solicitar assinar o documento$/, () => {

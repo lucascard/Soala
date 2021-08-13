@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+
 Given(/^Que o usuário acesse o sistema com o perfil "([^"]*)"$/, (perfil) => {
     cy.visit('/')
     cy.get('#nuLogin').type('909.385.421-68')
@@ -161,4 +162,16 @@ Then(/^A nota técnica deve ser salva$/, () => {
 
 Then(/^O despacho deve ser salvo$/, () => {
 	cy.wait('@salvarDespacho').its('response.body').should('include', 'Despacho Interlocut\\u00f3rio cadastrado com sucesso.')
+});
+
+When(/^Que o usuário confirme que deseja continuar$/, () => {
+	cy.wait(1000)
+	cy.contains('button', 'Sim').click()
+}); 
+
+When(/^O usuário solicitar assinar o despacho de designação$/, () => {
+    cy.wait(300)
+	cy.intercept('POST', 'https://tctisoala.sisicmbio.icmbio.gov.br/designacao/saveDespacho')
+    .as('salvarDespacho')
+	cy.contains('Assinar Documento').click()
 });
