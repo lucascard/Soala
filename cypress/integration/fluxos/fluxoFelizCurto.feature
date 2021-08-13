@@ -91,3 +91,8 @@ Fluxo onde o processo e designado diretamente para o parecerista e a chefia faz 
     | Emissão da ALA    | Data Atual | 08/2021     |
     E O usuário solicite salvar a conclusão de processo
     Então Os dados de conclusão devem ser atualizados
+
+    Cenário: Núcleo de Gestão gerar extrato de processo concluido
+    Dado Que o usuário acesse o sistema com o perfil "Núcleo de Gestão"
+    E Que exista um processo na etapa "Processo concluído"
+    Então a opção "Gerar Extrato" deve estar habilitada
