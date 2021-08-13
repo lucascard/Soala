@@ -1,7 +1,7 @@
 #language: pt
 Funcionalidade: Fluxo da Núcleo de Gestão
 
-Eu como parte do núcleo de gestão, avaliar pagamento.
+Eu como parte do núcleo de gestão, desejo avaliar pagamento, concluir processo e gerar extrato.
 
 Contexto:
     Dado Que o usuário acesse o sistema com o perfil "Núcleo de Gestão"
