@@ -21,7 +21,7 @@ When(/^O usuário enviar os dados ao SEI$/, () => {
 
 Given(/^Que exista um processo na etapa "([^"]*)"$/, (etapa) => {
     cy.get('input[type="search"]').type(etapa)
-    cy.wait(7000)
+    cy.wait(7500)
 	cy.get('td').contains(new RegExp('^' + etapa + '$', 'g'))
 });
 

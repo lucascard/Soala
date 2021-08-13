@@ -48,7 +48,7 @@ Fluxo onde o processo e designado diretamente para o parecerista e a chefia faz 
     E O usuário solicite salvar
     Então Os dados da GRU devem ser salvos
 
-    Cenário: Encaminhar pagamento não realizado
+    Cenário: Núcleo de Gestão encaminhar pagamento não realizado
     Dado Que o usuário acesse o sistema com o perfil "Núcleo de Gestão"
     E Que exista um processo na etapa "Avaliação de pagamento"
     E Que o usuário selecione a opção "Informar Pagamento"
@@ -82,7 +82,7 @@ Fluxo onde o processo e designado diretamente para o parecerista e a chefia faz 
     E O usuário enviar os dados ao SEI
     Então O despacho deve ser salvo
 
-    Cenário: Emitir ALA do processo aceito
+    Cenário: Núcleo de Gestão emitir ALA do processo aceito
     Dado Que o usuário acesse o sistema com o perfil "Núcleo de Gestão"
     E Que exista um processo na etapa "Registro de conclusão do processo"
     E Que o usuário selecione a opção "Registrar conclusão do processo"
