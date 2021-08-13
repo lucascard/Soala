@@ -16,12 +16,12 @@ When(/^O usuário enviar os dados ao SEI$/, () => {
 	cy.get('input[name="userLogin"]').type('12345')
     cy.get('input[name="userSenha"]').type('12345')
     cy.get('select[name="userCargo"]').select('Assessor(a)')
-    cy.contains('Enviar').click()
+    cy.get('button[id="btn-access"]:visible').click()
 });
 
 Given(/^Que exista um processo na etapa "([^"]*)"$/, (etapa) => {
     cy.get('input[type="search"]').type(etapa)
-    cy.wait(6000)
+    cy.wait(7000)
 	cy.get('td').contains(new RegExp('^' + etapa + '$', 'g'))
 });
 
