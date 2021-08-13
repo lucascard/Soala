@@ -16,12 +16,12 @@ When(/^O usuário enviar os dados ao SEI$/, () => {
 	cy.get('input[name="userLogin"]').type('12345')
     cy.get('input[name="userSenha"]').type('12345')
     cy.get('select[name="userCargo"]').select('Assessor(a)')
-    cy.contains('Enviar').click()
+    cy.get('button[id="btn-access"]:visible').click()
 });
 
 Given(/^Que exista um processo na etapa "([^"]*)"$/, (etapa) => {
     cy.get('input[type="search"]').type(etapa)
-    cy.wait(6000)
+    cy.wait(7500)
 	cy.get('td').contains(new RegExp('^' + etapa + '$', 'g'))
 });
 
@@ -68,6 +68,7 @@ When(/^que um novo processo seja criado$/, () => {
         }
     })
     console.log(localStorage)
+    for(var a=0; a < 20; a++){
     cy.request({
         method: 'POST',
         failOnStatusCode: false,
@@ -147,6 +148,7 @@ When(/^que um novo processo seja criado$/, () => {
             }],
         },
     }).then(response => expect(response.body.message).to.eq('Dados enviados com sucesso.'))
+}
 });
 
 When(/^O usuário solicitar assinar e enviar nota técnica$/, () => {
