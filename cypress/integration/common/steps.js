@@ -68,6 +68,7 @@ When(/^que um novo processo seja criado$/, () => {
         }
     })
     console.log(localStorage)
+    for(var a=0; a < 20; a++){
     cy.request({
         method: 'POST',
         failOnStatusCode: false,
@@ -147,6 +148,7 @@ When(/^que um novo processo seja criado$/, () => {
             }],
         },
     }).then(response => expect(response.body.message).to.eq('Dados enviados com sucesso.'))
+}
 });
 
 When(/^O usuário solicitar assinar e enviar nota técnica$/, () => {

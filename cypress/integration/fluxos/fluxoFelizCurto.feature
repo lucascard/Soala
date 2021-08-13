@@ -1,11 +1,8 @@
 #language: pt
-Funcionalidade: Fluxos
+Funcionalidade: Fluxo Feliz Curto
 
 Fluxo onde o processo e designado diretamente para o parecerista e a chefia faz a Análise de conformidade.
-
-    Contexto:
-    #Quando que um novo processo seja criado
-
+    
     Cenário: Coordenador/Gerente designar parecerista
     Dado Que o usuário acesse o sistema com o perfil "Coordenador/Gerente"
     E Que exista um processo na etapa "Manifestação de parecerista"
